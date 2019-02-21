@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-button [routerLink]="'/app/user/tabs/'" routerDirection="back"><ion-icon name="arrow-back" size="large"></ion-icon></ion-button>
+      </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<div text-center>
+  <img src="../../assets/add-image.png" alt="">
+  <h3>{{varNombre}} {{varApellido}}</h3>
+  <ion-button color="light" expand="block" fill="solid" [routerLink]="'/card/'" routerDirection="forward">Agregar Tarjeta</ion-button>
+</div>
+</ion-content>

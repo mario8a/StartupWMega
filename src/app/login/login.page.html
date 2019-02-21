@@ -1,0 +1,27 @@
+<ion-content padding>
+    <ion-button no-padding mode="ios" fill="clear" [routerLink]="'/'" routerDirection="back">
+        <ion-icon name="arrow-back"></ion-icon>Regresar</ion-button>
+
+    <div text-center>
+
+        <img src="../../assets/img/logo.png" alt="" height="120" width="120">
+
+        <h1 color="primary">Bienvenido a Gratio</h1>
+
+        <ion-item>
+            <ion-label position="stacked">Email:</ion-label>
+            <ion-input type="email" placeholder="Ingresa tu correo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Password:</ion-label>
+            <ion-input type="password" placeholder="Ingresa tu contraseña"></ion-input>
+        </ion-item>
+
+        <br>
+
+        <ion-button color="light" expand="block" fill="solid">Iniciar sesion</ion-button>
+        <ion-button expand="block" fill="clear" [routerLink]="'/register/'" routerDirection="forward">Registrarme</ion-button>
+
+    </div>
+</ion-content>
