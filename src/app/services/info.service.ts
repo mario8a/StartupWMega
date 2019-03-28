@@ -9,13 +9,13 @@ import { TaskI } from '../models/task.interface';
 })
 export class InfoService {
 
-  private infosCollection: AngularFirestoreCollection<TaskI>;
-  private infos: Observable<TaskI[]>;
+  private todosCollection: AngularFirestoreCollection<TaskI>;
+  private todos: Observable<TaskI[]>;
 
   constructor(db: AngularFirestore) {
 
-    this.infosCollection = db.collection<TaskI>('todos');
-    this.infos = this.infosCollection.snapshotChanges().pipe(
+    this.todosCollection = db.collection<TaskI>('todos');
+    this.todos = this.todosCollection.snapshotChanges().pipe(
       map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data();
@@ -28,24 +28,24 @@ export class InfoService {
   }
 
   getTodos(){
-    return this.infos;
+    return this.todos;
   }
 
   getTodo(id: string){
-    return this.infosCollection.doc<TaskI>(id).valueChanges();
+    return this.todosCollection.doc<TaskI>(id).valueChanges();
   }
 
   //PUT
   updateTodo(todo:TaskI, id: string){
-    return this.infosCollection.doc(id).update(todo);
+    return this.todosCollection.doc(id).update(todo);
   }
   
   //PUSH
-  addTodo(info: TaskI){
-    return this.infosCollection.add(info);
+  addTodo(todo: TaskI){
+    return this.todosCollection.add(todo);
   }
   //DELETE
   removeTodo(id: string){
-    return this.infosCollection.doc(id).delete();
+    return this.todosCollection.doc(id).delete();
   }
 }

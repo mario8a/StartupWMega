@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
+import { Component, OnInit } from '@angular/core';
+import { TaskI } from '../models/task.interface';
+import { InfoService } from '../services/info.service';
 
 @Component({
   selector: 'app-tab3',
@@ -8,9 +8,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner/ngx';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page {
-  scannedCode = null;
 
-  constructor(private barcodeScanner: BarcodeScanner) {}
+  todos: TaskI[];
+  constructor(private infoService: InfoService) {}
+
+  ngOnInit() {
+    this.infoService.getTodos().subscribe(res => this.todos = res);
+  }
 
 
 }
