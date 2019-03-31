@@ -1,24 +1,126 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>infoDetails</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button text="Regresar" defaultHref="/app/user/tabs/tab3"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Solicita tu contenedor</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
     <ion-list lines="full">
+
+        <!-- <ion-item *ngIf="todo">
+            <ion-input required type="number" placeholder="Tamaño del contenedor" [(ngModel)]="todo.priority"></ion-input>
+        </ion-item> -->
+
         <ion-item *ngIf="todo">
-            <ion-input required type="text" placeholder="Task" [(ngModel)]="todo.task"></ion-input>
+            <ion-label>Tamaño</ion-label>
+            <ion-select placeholder="Select One" [(ngModel)]="todo.priority">
+                <ion-select-option value="Grande">Grande</ion-select-option>
+                <ion-select-option value="Mediano">Mediano</ion-select-option>
+                <ion-select-option value="Pequeño">Pequeño</ion-select-option>
+            </ion-select>
         </ion-item>
+
         <ion-item *ngIf="todo">
-            <ion-input required type="number" placeholder="Priority" [(ngModel)]="todo.priority"></ion-input>
+            <ion-textarea required type="text" placeholder="Direccion" [(ngModel)]="todo.task"></ion-textarea>
         </ion-item>
+
+
+
     </ion-list>
-    <ion-button expand="full" (click)="saveTodo()">Save</ion-button>
+    <ion-button expand="full" (click)="saveTodo()">Solicitar</ion-button>
+
+
+
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="3">
+                    <!-- <ion-avatar> -->
+                    <img src="../../assets/img/Contenedor Yellow.jpg">
+                    <!-- </ion-avatar> -->
+                </ion-col>
+                <ion-col size="5">
+                    <div text-start>
+                        <p style="font-weight: bold; font-size: 14px; color: black;">Tamaño: </p>
+                        <p style="font-weight: bold; font-size: 14px; color: black">Capacidad: </p>
+                        <p style="font-weight: bold; font-size: 14px; color: black">Costo de renta: </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4">
+                    <div text-end>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">Grande (1)</p>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">1,100 (LT)</p>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">$82</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="3">
+                    <!-- <ion-avatar> -->
+                    <img src="../../assets/img/Contenedor Azul.jpg">
+                    <!-- </ion-avatar> -->
+                </ion-col>
+                <ion-col size="5">
+                    <div text-start>
+                        <p style="font-weight: bold; font-size: 14px; color: black;">Tamaño: </p>
+                        <p style="font-weight: bold; font-size: 14px; color: black">Capacidad: </p>
+                        <p style="font-weight: bold; font-size: 14px; color: black">Costo de renta: </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4">
+                    <div text-end>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">Mediano (2)</p>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">660 (LT)</p>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">$72</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <ion-card>
+        <ion-grid>
+            <ion-row>
+                <ion-col size="3">
+                    <!-- <ion-avatar> -->
+                    <img src="../../assets/img/Contenedor Verde.jpg">
+                    <!-- </ion-avatar> -->
+                </ion-col>
+                <ion-col size="5">
+                    <div text-start>
+                        <p style="font-weight: bold; font-size: 14px; color: black;">Tamaño: </p>
+                        <p style="font-weight: bold; font-size: 14px; color: black">Capacidad: </p>
+                        <p style="font-weight: bold; font-size: 14px; color: black">Costo de renta: </p>
+                    </div>
+                </ion-col>
+                <ion-col size="4">
+                    <div text-end>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">Pequeño (3)</p>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">360 (LT)</p>
+                        <p style="font-weight: bold; font-size: 14px; color: rgb(0, 88, 221);">$34</p>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+
+    <!-- FABBOTTOM -->
+
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
         <ion-fab-button color="danger" (click)="onRemoveTodo(todoId)" routerLink="/app/user/tabs/tab3" routerDirection="forward">
             <ion-icon name="trash"></ion-icon>
         </ion-fab-button>
     </ion-fab>
+
+    <!--  -->
 
 </ion-content>

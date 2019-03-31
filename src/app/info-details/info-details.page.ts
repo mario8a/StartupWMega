@@ -13,10 +13,10 @@ export class InfoDetailsPage implements OnInit {
 
   todo: TaskI = {
     task: '',
-    priority: 0
+    priority: '',
   };
 
-  todoId= null;
+  todoId = null;
 
   constructor(private route: ActivatedRoute, private nav: NavController, 
     private infoService: InfoService, private loadingController: LoadingController) { }

@@ -7,12 +7,12 @@
 export const environment = {
   production: false,
   firebaseConfig : {
-    apiKey: "AIzaSyDs_pMnp05fuO_2ozWidysOfZ76y7V9Z6Q",
-    authDomain: "crudionic-76801.firebaseapp.com",
-    databaseURL: "https://crudionic-76801.firebaseio.com",
-    projectId: "crudionic-76801",
-    storageBucket: "crudionic-76801.appspot.com",
-    messagingSenderId: "284433947370"
+    apiKey: "AIzaSyDUB7CC1Rbj2ktwlHE-UWkj0UyGJK_FGGk",
+    authDomain: "swmega-1eb91.firebaseapp.com",
+    databaseURL: "https://swmega-1eb91.firebaseio.com",
+    projectId: "swmega-1eb91",
+    storageBucket: "swmega-1eb91.appspot.com",
+    messagingSenderId: "322368052041"
   }
 };
 
